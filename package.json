@@ -1,0 +1,20 @@
+{
+  "name": "nocturnal",
+  "version": "0.0.1",
+  "description": "An torrent manager for movies",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [
+    "torrent"
+  ],
+  "author": "Damian and Chopin",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^32.0.1"
+  },
+  "dependencies": {
+    "webtorrent": "^2.5.0"
+  }
+}
