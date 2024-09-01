@@ -95,22 +95,23 @@ button {
     max-width: 500
 }
 
-main:hover {
-    padding-right: 34px; /* 50px - 16px (scrollbar width) */
-}
-
-main::-webkit-scrollbar {
-    width: 16px;
+/* scroll bar styling */
+::-webkit-scrollbar {
+    width: 8px;
     background-color: transparent;
 }
-
-main::-webkit-scrollbar-thumb {
-    background-color: rgba(6, 6, 6, 0.2);
-    border-radius: 8px;
-    border: 4px solid transparent;
+    
+::-webkit-scrollbar-thumb {
+    background-color: rgb(62, 62, 62);
+    border-radius: 10px;
+    border: 2px solid transparent;
     background-clip: content-box;
 }
-
-main:hover::-webkit-scrollbar-thumb {
-    background-color: rgba(14, 13, 13, 0.5);
+    
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+    
+:hover::-webkit-scrollbar-thumb {
+    background-color: rgb(17, 17, 17);
 }
