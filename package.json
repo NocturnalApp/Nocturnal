@@ -9,7 +9,7 @@
   "keywords": [
     "torrent"
   ],
-  "author": "Damian and Chopin",
+  "author": "tteuw and Chopin",
   "license": "MIT",
   "devDependencies": {
     "electron": "^32.0.1"
