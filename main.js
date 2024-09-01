@@ -1,36 +1,29 @@
-const { app, BrowserWindow } = require('electron/main')
-const path = require('node:path')
+const { app, BrowserWindow } = require('electron');
+const path = require('path');
 
-const createWindow = () => {
+function createWindow() {
     const win = new BrowserWindow({
-      width: 800,      
-      height: 600,
-      title: "Nocturnal",
-      autoHideMenuBar: true,
-      webPreferences: {
-        preload: path.join(__dirname, 'preload.js')
-      }
-    })
-  
-    win.loadFile('index/index.html');
+        width: 1200,
+        height: 800,
+        webPreferences: {
+            nodeIntegration: true,
+            contextIsolation: false
+        }
+    });
 
-    // Open DevTools by default
-    win.webContents.openDevTools();
-  }
-  
+    win.loadFile('index.html');
+}
 
-  app.whenReady().then(() => {
-    createWindow()
-  
-    app.on('activate', () => {
-      if (BrowserWindow.getAllWindows().length === 0) {
-        createWindow()
-      }
-    })
-  })
-  
-  app.on('window-all-closed', () => {
+app.whenReady().then(createWindow);
+
+app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
-      app.quit()
+        app.quit();
     }
-  })
+});
+
+app.on('activate', () => {
+    if (BrowserWindow.getAllWindows().length === 0) {
+        createWindow();
+    }
+});
