@@ -5,8 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nocturnal</title>
   </head>
-  <body style="overflow: hidden; margin: 0px">
+  <body style="overflow: overlay; margin: 0px">
+    
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <style>
+    ::-webkit-scrollbar-track
+    {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+      background-color: hsla(0, 0%, 2%, 0.728);
+    }
+
+    ::-webkit-scrollbar
+    {
+      width: 12px;
+      background-color: #F5F5F5;
+    }
+
+    ::-webkit-scrollbar-thumb
+    {
+      border-radius: 10px;
+      -webkit-box-shadow: inset 0 0 6px rgba(35, 35, 35, 0.3);
+      background-color: #141414;
+    }
+
+
+
+      
+    </style>
   </body>
 </html>
