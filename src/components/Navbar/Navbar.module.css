@@ -1,0 +1,39 @@
+.Navbar{
+    /*background-color: rgb(5, 8, 7); */
+    background: linear-gradient(#070707,#3a3a3a);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    gap: 2rem;
+}
+.logo{
+    width: 150px;  
+      
+}
+.Navbar a{
+    color: inherit;
+    text-decoration: none;
+}
+.Navbar ul{
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.settings{
+    width: 25px;
+    height: 25px;
+}
+
+.hamburger{
+    width: 25px;
+    height: 25px;
+}
+
+.search{
+    width: 25px;
+    height: 25px;
+}
