@@ -1,30 +1,12 @@
-# React + TypeScript + Vite
+<p align="center">
+ <img alt="" src="/src/assets/noctural_txt.png" width=500 align="center">
+</p>
+Nocturnal is a powerful and user-friendly torrent streaming app that allows you to watch a vast library of movies instantly, without the need to wait for downloads. With a sleek interface and seamless performance, Nocturnal brings you the ultimate movie-watching experience. Simply search for your favorite movie, start streaming, and enjoy!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Features
+* Instant Streaming: Watch movies directly from torrents without waiting for the download to complete.
+* Wide Range of Content: Access a huge collection of movies across various genres and languages.
+* High-Quality Playback: Enjoy movies in full HD, with options to adjust streaming quality based on your connection.
+* User-Friendly Interface: Easy to navigate with a clean and intuitive design.
+* Search & Filter: Quickly find the movies you want with advanced search and filtering options.
+* Cross-Platform Support: Available on Windows, macOS, and Linux.
