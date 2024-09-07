@@ -1,0 +1,8 @@
+.bg-image {
+  background-image: url('./assets/br1.jpg');
+  display: block;
+  max-width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
