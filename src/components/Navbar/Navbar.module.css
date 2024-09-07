@@ -23,17 +23,17 @@
     gap: 1rem;
 }
 
-.settings{
+.Settings{
     width: 25px;
     height: 25px;
 }
 
-.hamburger{
+.Menu {
     width: 25px;
     height: 25px;
 }
 
-.search{
-    width: 25px;
-    height: 25px;
+.Search {
+    width: 100px;
+    height: 100px;
 }
