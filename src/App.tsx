@@ -1,10 +1,15 @@
 import BG from './BG.tsx';
+import Card from './Card.tsx';
+
 
 function App() {
   return (
-    <div style={{ height: '100%', width: '100%' }}>
+    <>
+    <div>
+      <Card />
       <BG />
     </div>
+    </>
   );
 }
 

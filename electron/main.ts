@@ -1,6 +1,7 @@
 import { app, BrowserWindow } from 'electron'
 import { createRequire } from 'node:module'
 import { fileURLToPath } from 'node:url'
+import { Menu } from 'electron';
 import path from 'node:path'
 
 const require = createRequire(import.meta.url)
@@ -25,21 +26,24 @@ export const RENDERER_DIST = path.join(process.env.APP_ROOT, 'dist')
 process.env.VITE_PUBLIC = VITE_DEV_SERVER_URL ? path.join(process.env.APP_ROOT, 'public') : RENDERER_DIST
 
 let win: BrowserWindow | null
+Menu.setApplicationMenu(null);
 
 function createWindow() {
   win = new BrowserWindow({ 
-    width: 800,  // or other preferred dimensions
-    height: 600,
+    width: 1024,    // Set the window width
+    height: 768,    // Set the window height
     icon: path.join(process.env.VITE_PUBLIC, 'electron-vite.svg'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.mjs'),
-    
     },
-    autoHideMenuBar: true,
+  });
 
-  })
 
-  win.setMenuBarVisibility(false);
+    win.webContents.openDevTools();
+    win.setMenuBarVisibility(false);
+    win.on('menu', (e) => {
+      e.preventDefault();
+    });
 
 
   // Test active push message to Renderer-process.

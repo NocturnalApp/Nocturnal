@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from "electron";
+import { Menu, app, BrowserWindow } from "electron";
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
@@ -10,18 +10,23 @@ const MAIN_DIST = path.join(process.env.APP_ROOT, "dist-electron");
 const RENDERER_DIST = path.join(process.env.APP_ROOT, "dist");
 process.env.VITE_PUBLIC = VITE_DEV_SERVER_URL ? path.join(process.env.APP_ROOT, "public") : RENDERER_DIST;
 let win;
+Menu.setApplicationMenu(null);
 function createWindow() {
   win = new BrowserWindow({
-    width: 800,
-    // or other preferred dimensions
-    height: 600,
+    width: 1024,
+    // Set the window width
+    height: 768,
+    // Set the window height
     icon: path.join(process.env.VITE_PUBLIC, "electron-vite.svg"),
     webPreferences: {
       preload: path.join(__dirname, "preload.mjs")
-    },
-    autoHideMenuBar: true
+    }
   });
+  win.webContents.openDevTools();
   win.setMenuBarVisibility(false);
+  win.on("menu", (e) => {
+    e.preventDefault();
+  });
   win.webContents.on("did-finish-load", () => {
     win == null ? void 0 : win.webContents.send("main-process-message", (/* @__PURE__ */ new Date()).toLocaleString());
   });
