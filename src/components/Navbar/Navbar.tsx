@@ -4,7 +4,7 @@ import settings_icon from './../../assets/settings_icon.png'
 import hamburger_menu from './../../assets/hamburger-menu.png'
 import search_icon from './../../assets/search_icon.png'
 
-export default function Navbar(){
+const Navbar = () => {
     return <nav className={styles.Navbar}>
     <a href=""><img className={styles.logo} src={nocturnal_txt} alt="Nocturnal" /></a>
     <ul>
@@ -22,3 +22,4 @@ export default function Navbar(){
 
     </nav>
 }
+export default Navbar
