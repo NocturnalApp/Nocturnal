@@ -5,8 +5,7 @@ import Card from './Card.tsx';
 function App() {
   return (
     <>
-    <div>
-      <Card />
+    <div>      
       <BG />
     </div>
     </>
