@@ -1,6 +1,4 @@
-import BG from './BG.tsx';
-import Card from './Card.tsx';
-
+import BG from './components/Background/BG';
 
 function App() {
   return (

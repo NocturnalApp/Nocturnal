@@ -1,0 +1,16 @@
+.cardbb {
+  display: block;
+  position: absolute;
+  top: 45%; /* Adjusted to use viewport height */
+  left: 45%; /* Adjusted to use viewport width */
+  transform: translate(-50%, -50%); /* Center the card */
+  background-image: url('../../../../../public/assets/br2.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 14vw; /* 30% of the viewport width */
+  height: 40vh; /* 50% of the viewport height */
+  max-width: 400px; /* Max width to prevent the card from getting too large */
+  max-height: 500px; /* Max height to prevent the card from getting too large */
+  border-radius: 52px;
+  box-shadow: 0px 5px 30px 12px hsla(0, 0%, 0%, 0.5);
+  } 
