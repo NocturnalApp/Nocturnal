@@ -1,29 +1,33 @@
-import styles from './Navbar.module.css'
-import nocturnal_txt from './../../assets/noctural_txt.png'
-/*import settings_icon from './../../assets/settings_icon.png'
-import hamburger_menu from './../../assets/hamburger-menu.png'
-import search_icon from './../../assets/search_icon.png' */
-import { CiMenuBurger } from "react-icons/ci";
-import { CiSettings } from "react-icons/ci";
-import { CiSearch } from "react-icons/ci";
-
+import styles from './Navbar.module.css';
+import nocturnal_txt from './../../assets/noctural_txt.png';
+import { CiMenuBurger, CiSearch } from "react-icons/ci";
+import { GiSettingsKnobs } from "react-icons/gi";
 
 const Navbar = () => {
-    return <nav className={styles.Navbar}>
-    <a href=""><img className={styles.logo} src={nocturnal_txt} alt="Nocturnal" /></a>
-
-    <ul>
+  return (
+    <nav className={styles.Navbar}>
+      <a href="">
+        <img className="h-8" src={nocturnal_txt} alt="Nocturnal" />
+      </a>
+      <ul className="flex space-x-4">
         <li>
-            <a href=""><CiSearch size={25}/></a>
-        </li>  
-
-        <li>
-            <a href=""><CiMenuBurger size={23}/></a>
+          <a href="" className={styles.icon}>
+            <CiSearch size={25} />
+          </a>
         </li>
         <li>
-            <a href=""> <CiSettings size={25}/> </a>
+          <a href="" className={styles.icon}>
+            <CiMenuBurger size={25} />
+          </a>
         </li>
-    </ul>
+        <li>
+          <a href="" className={styles.icon}>
+            <GiSettingsKnobs size={25} />
+          </a>
+        </li>
+      </ul>
     </nav>
-}
-export default Navbar
+  );
+};
+
+export default Navbar;
