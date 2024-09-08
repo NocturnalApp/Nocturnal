@@ -7,7 +7,7 @@ const BG = () => {
   const [blurAmount] = useState<number>(4); // Default blur amount
 
   return (
-    <div className={styles.backgroundContainer}>
+    <div className={`${styles.backgroundContainer} bg-gradient-to-t from-black`}>
       <div 
         className={styles.backgroundLayer} 
         style={{ backgroundImage: `url(${backdropUrl})`, filter: `blur(${blurAmount}px)` }}
