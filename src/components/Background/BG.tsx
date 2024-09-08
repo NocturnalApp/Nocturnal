@@ -4,12 +4,18 @@ import { useState } from 'react';
 
 const BG = () => {
   const [backdropUrl, setBackdropUrl] = useState<string>('');
+  const [blurAmount] = useState<number>(4); // Default blur amount
 
   return (
-    <div className={`${styles.backgroundimage} relative`} style={{ backgroundImage: `url(${backdropUrl})` }}>
-      <Card setBackdropUrl={setBackdropUrl} />
+    <div className={styles.backgroundContainer}>
+      <div 
+        className={styles.backgroundLayer} 
+        style={{ backgroundImage: `url(${backdropUrl})`, filter: `blur(${blurAmount}px)` }}
+      />
+      <div className={styles.contentLayer}>
+        <Card setBackdropUrl={setBackdropUrl} />
+      </div>
     </div>
   );
 }
-
 export default BG;

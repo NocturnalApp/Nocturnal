@@ -1,32 +1,26 @@
-.backgroundimage {
-    display: block;
-    max-width: 100%;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    overflow: hidden; /* Ensure content like Card remains unaffected */
-  }
-  
-.backgroundimage::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: -1; /* Keep the background behind content */
-    background: 
-      radial-gradient(
-        circle, 
-        rgba(250, 242, 242, 0) 0%,   /* Fully transparent at the center */
-        rgba(119, 115, 115, 0.5) 50%, /* Semi-transparent gray in the middle */
-        rgba(9, 9, 9, 0.9) 100% /* Almost fully dark at the edges */
-      ),
-      url('./../../assets/br1.jpg') center center/cover no-repeat;
-    filter: blur(1.5px); /* Apply blur effect to the image */
+/* BG.module.css */
+.backgroundContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
-  
-  .backgroundimage > * {
-    position: relative;
-    z-index: 1; /* Ensure child elements like Card are on top of the background */
-  }
+
+.backgroundLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: blur(2px); /* Adjust the blur level as needed */
+  -webkit-filter: blur(2px); /* For WebKit browsers */
+  z-index: -1; /* Ensure this layer is behind the content */
+}
+
+.contentLayer {
+  position: relative;
+  z-index: 1; /* Ensure this layer is above the background */
+  width: 100%;
+  height: 100%;
+}
