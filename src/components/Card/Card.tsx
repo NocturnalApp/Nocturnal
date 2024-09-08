@@ -19,13 +19,13 @@ const Card = () => {
       </div>
 
       {/* Sidebar with Title, Buttons, and Synopsis */}
-      <div className="absolute top-1/2 left-[48%] transform -translate-y-1/2">
-        <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">Breaking Bad</h1>
+      <div className="absolute top-[43%] left-[48%] transform -translate-y-1/2">
+        <h1 className="text-4xl lg:text-6xl font-bold text-white mb-4">Breaking Bad</h1>
         <div className="flex space-x-4 mb-4">
-          <button className="px-6 py-2  border border-white text-white rounded-[50px] bg-white/30 backdrop-blur-2xl transition duration-300 ease-in-out hover:bg-white hover:text-black">
+          <button className="px-6 py-2  border border-white text-white rounded-[50px] bg-white/30 backdrop-blur-2xl transition duration-300 ease-in-out hover:bg-white hover:text-black hover:scale-105">
             Category 1
           </button>
-          <button className="px-6 py-2 border border-white text-white rounded-[50px] bg-white/30 backdrop-blur-2xl transition duration-300 ease-in-out hover:bg-white hover:text-black">
+          <button className="px-6 py-2 border border-white text-white rounded-[50px] bg-white/30 backdrop-blur-2xl transition duration-300 ease-in-out hover:bg-white hover:text-black hover:scale-105">
             Category 2
           </button>
         </div>
