@@ -3,7 +3,7 @@ import Card from '../Card/Card.tsx';
 
 const BG = () => {
     return (
-        <div className={styles.backgroundimage}>
+        <div className={`${styles.backgroundimage} relative`}>
         <Card />
         </div>
     );

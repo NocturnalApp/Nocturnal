@@ -5,7 +5,7 @@ import { GiSettingsKnobs } from "react-icons/gi";
 const Navbar = () => {
   return (
     <nav
-      className="flex items-center justify-between sticky top-0 p-2 bg-gradient-to-r from-[#070707] to-[#6D6D6D] bg-opacity-10 shadow-md backdrop-blur-md"
+      className="flex items-center justify-between sticky top-0 p-2 bg-gradient-to-r from-[#070707] to-[#6D6D6D] bg-opacity-10 shadow-md backdrop-blur-md z-50"
       style={{
         background: 'linear-gradient(to right, #070707, rgba(109, 109, 109, 0.15))',
         backgroundColor: 'rgba(255, 255, 255, 0.1)',
