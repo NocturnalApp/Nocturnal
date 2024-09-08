@@ -1,63 +1,18 @@
+// Card.tsx
 import './Card.module.css';
 import { FaPlay } from 'react-icons/fa';
-import axios from "axios";
-import { useEffect, useState } from 'react';
-import request from './../../request_api';
+import { useMovies } from './../../useMovies';
+import { useEffect } from 'react';
 
-interface Movie {
-  id: number;
-  title: string;
-  backdrop_path: string;
-  overview: string;
-  poster_path: string;
-  genre_ids: number[]; // Assuming the movie data includes an array of genre IDs
-}
-
-// Mapping of genre IDs to genre names
-const genreMap: { [key: number]: string } = {
-  28: "Action",
-  12: "Adventure",
-  16: "Animation",
-  35: "Comedy",
-  80: "Crime",
-  99: "Documentary",
-  18: "Drama",
-  10751: "Family",
-  14: "Fantasy",
-  36: "History",
-  27: "Horror",
-  10402: "Music",
-  9648: "Mystery",
-  10749: "Romance",
-  878: "Science Fiction",
-  10770: "TV Movie",
-  53: "Thriller",
-  10752: "War",
-  37: "Western",
-};
 
 const Card = ({ setBackdropUrl }: { setBackdropUrl: (url: string) => void }) => {
-  const [movies, setMovies] = useState<Movie[]>([]);
-
-  const movie = movies.length > 0 ? movies[Math.floor(Math.random() * movies.length)] : null;
-
-  useEffect(() => {
-    axios.get(request.requestTrending).then((response) => {
-      setMovies(response.data.results);
-    });
-  }, []);
-
+  const { movie, getGenres } = useMovies();
   const baseUrl = "https://image.tmdb.org/t/p/original";
   const backdropUrl = movie ? `${baseUrl}${movie.backdrop_path}` : '';
 
   useEffect(() => {
     setBackdropUrl(backdropUrl);
   }, [backdropUrl, setBackdropUrl]);
-
-  // Function to convert genre IDs to genre names
-  const getGenres = (genreIds: number[]) => {
-    return genreIds.map(id => genreMap[id]).filter(Boolean).join(", ");
-  };
 
   return (
     <div className="relative z-0 flex h-screen p-8">
@@ -81,7 +36,7 @@ const Card = ({ setBackdropUrl }: { setBackdropUrl: (url: string) => void }) => 
           {/* Display the first two genres (if available) */}
           {movie?.genre_ids.slice(0, 2).map(id => (
             <button key={id} className="shadow-md font-roboto px-6 py-2 border border-white text-white rounded-[50px] bg-white/30 backdrop-blur-2xl transition duration-300 ease-in-out hover:bg-white hover:text-black hover:scale-105">
-              {genreMap[id]}
+              {getGenres([id])}
             </button>
           ))}
         </div>
