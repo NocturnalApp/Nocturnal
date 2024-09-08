@@ -10,12 +10,35 @@ interface Movie {
   backdrop_path: string;
   overview: string;
   poster_path: string;
+  genre_ids: number[]; // Assuming the movie data includes an array of genre IDs
 }
+
+// Mapping of genre IDs to genre names
+const genreMap: { [key: number]: string } = {
+  28: "Action",
+  12: "Adventure",
+  16: "Animation",
+  35: "Comedy",
+  80: "Crime",
+  99: "Documentary",
+  18: "Drama",
+  10751: "Family",
+  14: "Fantasy",
+  36: "History",
+  27: "Horror",
+  10402: "Music",
+  9648: "Mystery",
+  10749: "Romance",
+  878: "Science Fiction",
+  10770: "TV Movie",
+  53: "Thriller",
+  10752: "War",
+  37: "Western",
+};
 
 const Card = ({ setBackdropUrl }: { setBackdropUrl: (url: string) => void }) => {
   const [movies, setMovies] = useState<Movie[]>([]);
 
-  // Pick a random movie from the list, if available
   const movie = movies.length > 0 ? movies[Math.floor(Math.random() * movies.length)] : null;
 
   useEffect(() => {
@@ -27,10 +50,14 @@ const Card = ({ setBackdropUrl }: { setBackdropUrl: (url: string) => void }) => 
   const baseUrl = "https://image.tmdb.org/t/p/original";
   const backdropUrl = movie ? `${baseUrl}${movie.backdrop_path}` : '';
 
-  // Pass the backdrop URL to the parent component
   useEffect(() => {
     setBackdropUrl(backdropUrl);
   }, [backdropUrl, setBackdropUrl]);
+
+  // Function to convert genre IDs to genre names
+  const getGenres = (genreIds: number[]) => {
+    return genreIds.map(id => genreMap[id]).filter(Boolean).join(", ");
+  };
 
   return (
     <div className="relative z-0 flex h-screen p-8">
@@ -47,16 +74,16 @@ const Card = ({ setBackdropUrl }: { setBackdropUrl: (url: string) => void }) => 
         </div>
       </div>
 
-      {/* Sidebar with Title, Buttons, and Synopsis */}
+      {/* Sidebar with Title, Genres, and Synopsis */}
       <div className="absolute top-[43%] left-[48%] transform -translate-y-1/2">
         <h1 className="text-shadow-md font-robot text-6xl lg:text-6xl font-bold text-white mb-4">{movie?.title}</h1>
         <div className="flex space-x-4 mb-4">
-          <button className="shadow-md font-roboto px-6 py-2  border border-white text-white rounded-[50px] bg-white/30 backdrop-blur-2xl transition duration-300 ease-in-out hover:bg-white hover:text-black hover:scale-105">
-            Category 1
-          </button>
-          <button className="shadow-xl font-roboto px-6 py-2 border border-white text-white rounded-[50px] bg-white/30 backdrop-blur-2xl transition duration-300 ease-in-out hover:bg-white hover:text-black hover:scale-105">
-            Category 2
-          </button>
+          {/* Display the first two genres (if available) */}
+          {movie?.genre_ids.slice(0, 2).map(id => (
+            <button key={id} className="shadow-md font-roboto px-6 py-2 border border-white text-white rounded-[50px] bg-white/30 backdrop-blur-2xl transition duration-300 ease-in-out hover:bg-white hover:text-black hover:scale-105">
+              {genreMap[id]}
+            </button>
+          ))}
         </div>
         <p className="text-shadow-lg font-roboto text-white bold lg:text-lg max-w-lg">
           {movie?.overview}
