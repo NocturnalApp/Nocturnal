@@ -1,5 +1,6 @@
 import BG from './components/Background/BG';
 import Navbar from './components/Navbar/Navbar';
+import MovieBrowsingUI from './Pages/Catalogs'
 import "./index.css";
 
 const App = () => {
@@ -7,7 +8,8 @@ const App = () => {
     <>
     <div>
       <Navbar />
-      <BG />      
+      <BG />   
+      <MovieBrowsingUI />   
     </div>
     </>
   );

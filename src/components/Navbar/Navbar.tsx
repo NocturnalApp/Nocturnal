@@ -23,17 +23,27 @@ const Navbar = () => {
       </a>
       <ul className="flex space-x-4 items-center">
         <li>
+          <a
+          href=""
+          className="text-white transition-colors duration-300 hover:text-gray-400 "
+          >
           <CiSearch
             size={20}
-            className="text-white transition-colors duration-300 hover:text-gray-400"
+            style={{ textShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)' }}
+            className="text-white transition-colors duration-300 hover:text-gray-400 "
           />
+          </a>
+          
         </li>
         <li>
           <a
             href=""
             className="text-white transition-colors duration-300 hover:text-gray-400"
           >
-            <CiMenuBurger size={20} />
+            <CiMenuBurger 
+            size={20} 
+            style={{ textShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)' }}
+            />
           </a>
         </li>
         <li>
@@ -41,7 +51,10 @@ const Navbar = () => {
             href=""
             className="text-white transition-colors duration-300 hover:text-gray-400"
           >
-            <GiSettingsKnobs size={20} />
+            <GiSettingsKnobs 
+            size={20} 
+            style={{ textShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)' }}
+            />
           </a>
         </li>
       </ul>

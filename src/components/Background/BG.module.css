@@ -6,6 +6,7 @@
     background-position: center;
     overflow: hidden; /* Ensure content like Card remains unaffected */
   }
+  
 .backgroundimage::before {
     content: "";
     position: absolute;
@@ -17,9 +18,9 @@
     background: 
       radial-gradient(
         circle, 
-        rgba(250, 242, 242, 0.0) 0%,   /* Fully transparent at the center */
-        rgba(119, 115, 115, 0.35) 50%, /* 30% less opaque gray in the middle */
-        rgba(9, 9, 9, 0.63) 100% /* 30% less opaque dark color at the edges */
+        rgba(250, 242, 242, 0) 0%,   /* Fully transparent at the center */
+        rgba(119, 115, 115, 0.5) 50%, /* Semi-transparent gray in the middle */
+        rgba(9, 9, 9, 0.9) 100% /* Almost fully dark at the edges */
       ),
       url('./../../assets/br1.jpg') center center/cover no-repeat;
     filter: blur(1.5px); /* Apply blur effect to the image */
