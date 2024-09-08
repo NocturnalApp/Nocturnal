@@ -4,7 +4,7 @@ import { FaPlay } from 'react-icons/fa'; // Import the play icon
 
 const Card = () => {
   return (
-    <div className="relative flex h-screen p-8">
+    <div className="relative z-0 flex h-screen p-8">
       {/* Card Component */}
       <div className="relative w-[50%] h-full">
         <div
