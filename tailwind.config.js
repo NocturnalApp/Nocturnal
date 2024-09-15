@@ -6,6 +6,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      scale: {
+        '105': '1.05', // Custom scale for zoom-in effect
+      },
+      transitionProperty: {
+        'transform': 'transform',
+      },
       textShadow: {
         'sm': '1px 1px 2px rgba(0, 0, 0, 0.5)',
         'md': '2px 2px 4px rgba(0, 0, 0, 0.5)',
@@ -32,6 +38,6 @@ module.exports = {
       }
 
       addUtilities(newUtilities, ['responsive', 'hover']);
-    }
+    },
   ]
 }

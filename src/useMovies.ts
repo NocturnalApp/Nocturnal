@@ -1,11 +1,11 @@
-// useMovies.ts
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import request from './request_api';
 
-interface Movie {
+export interface Movie {  // Ensure the Movie interface is exported
   id: number;
   title: string;
+  original_name: string;
   backdrop_path: string;
   overview: string;
   poster_path: string;
