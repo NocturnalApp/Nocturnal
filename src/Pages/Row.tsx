@@ -35,7 +35,9 @@ const Row: React.FC<RowProps> = ({ title, fetchURL, rowID }) => {
 
   return (
     <>
-      <h2 className="text-white font-bold md:text-xl p-4">{title}</h2> //Title text
+      <h2 className="text-shadow-lg text-gradient font-medium text-xl xl:text-4xl p-4 text-center "> {/* Updated title style */}
+        {title}
+      </h2>
       <div className="relative flex items-center group">
         <IoIosArrowBack
           onClick={slideLeft}
@@ -45,7 +47,7 @@ const Row: React.FC<RowProps> = ({ title, fetchURL, rowID }) => {
         />
         <div
           id={'slider' + rowID}
-            className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth relative slider"
+          className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth relative slider"
         >
           {movies.map((item) => (
             <MovieComponent key={item.id} item={item} />
@@ -61,5 +63,4 @@ const Row: React.FC<RowProps> = ({ title, fetchURL, rowID }) => {
     </>
   );
 };
-
 export default Row;

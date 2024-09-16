@@ -6,6 +6,8 @@ module.exports = {
   ],
   theme: {
     extend: {
+      gradient: 'linear-gradient(to right, #211F1F 0%, #878080 100%)',
+    },
       scale: {
         '105': '1.05', // Custom scale for zoom-in effect
       },
@@ -17,9 +19,9 @@ module.exports = {
         'md': '2px 2px 4px rgba(0, 0, 0, 0.5)',
         'lg': '3px 3px 6px rgba(0, 0, 0, 0.5)',
         'none': 'none',
-      }
-    }
-  },
+      },
+    },
+  }
   plugins: [
     function({ addUtilities }) {
       const newUtilities = {
@@ -40,4 +42,3 @@ module.exports = {
       addUtilities(newUtilities, ['responsive', 'hover']);
     },
   ]
-}

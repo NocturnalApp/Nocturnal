@@ -19,3 +19,17 @@ body {
   scrollbar-width: none;  /* Firefox */
 }
 
+
+.text-gradient {
+  background: linear-gradient(to right, #211F1F 0%, #878080 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500; /* Roboto Medium */
+  font-size: 40px; /* Set font size to 40px */
+  text-align: left; /* Align text to the left */
+  display: block; /* Ensure block layout for alignment */
+  margin-left: 20px; /* Adjust margin as needed to align relative to the container */
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5); /* Drop shadow effect */
+  position: relative; /* Required for positioning the pseudo-element */
+}

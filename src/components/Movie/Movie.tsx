@@ -5,19 +5,22 @@ interface MovieProps {
 }
 
 const Movie: React.FC<MovieProps> = ({ item }) => {
-  const movieTitle = item?.title || item?.original_name; // Use title if available, otherwise use original_name
   return (
-    <div className="relative inline-block cursor-pointer p-2 group">
+    <div className="relative inline-block cursor-pointer p-10 group">
       {/* Movie Poster */}
-      <div className="relative overflow-hidden rounded-lg transition-transform duration-300 group-hover:scale-105">
+      <div className="relative overflow-hidden rounded-[20px] transition-transform duration-300 hover:scale-440">
         <img
-          className="w-[200px] h-[330px] object-cover"
+          className="w-[300px] h-[450px] object-cover"
           src={`https://image.tmdb.org/t/p/w500/${item?.poster_path}`} // Change to poster_path
           alt={item?.title}
         />
+        {/* Individual Opacity Effect */}
+        <div className="absolute inset-0 bg-black opacity-0 hover:opacity-50 transition-opacity duration-300"></div>
       </div>
       {/* Movie Title */}
-      <div className="mt-2 text-white text-center text-sm">{item?.title || item?.original_name}</div>
+      <div className="mt-4 text-white text-center text-lg text-shadow-md font-medium" style={{ fontFamily: 'Roboto Light, sans-serif' }}>
+        {item?.title || item?.original_name}
+      </div>
     </div>
   );
 };

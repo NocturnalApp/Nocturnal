@@ -17,7 +17,6 @@ const App = () => {
       <Row rowID='5' title='Horror' fetchURL={requests.requestHorror}/>
       <Row rowID='6' title='Popular' fetchURL={requests.requestPopular}/>
       <Row rowID='7' title='Animes' fetchURL={requests.requestAnimes}/>
-      
 
     </div>
     </>
