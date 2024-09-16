@@ -6,9 +6,9 @@ interface MovieProps {
 
 const Movie: React.FC<MovieProps> = ({ item }) => {
   return (
-    <div className="relative inline-block cursor-pointer p-10 group">
+    <div className="relative inline-block cursor-pointer p-10">
       {/* Movie Poster */}
-      <div className="relative overflow-hidden rounded-[20px] transition-transform duration-300 hover:scale-440">
+      <div className="relative overflow-hidden rounded-[20px] transform transition-transform duration-300 hover:scale-105"> {/* Isolated hover effect */}
         <img
           className="w-[300px] h-[450px] object-cover"
           src={`https://image.tmdb.org/t/p/w500/${item?.poster_path}`} // Change to poster_path
